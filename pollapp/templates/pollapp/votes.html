@@ -1,0 +1,23 @@
+{% extends 'pollapp/base.html' %}
+
+{% block title %}HomePage{% endblock %}
+
+{% block content %}
+
+<div class="container mt-3">
+    <div class="card mt-3">
+        <div class="card-body">
+            <h1>{{question.name}}</h1>
+            <form action="" method='POST'>
+                {% for q in question.choice_set.all %}
+                {% csrf_token %}
+                <input name="choices" type="checkbox" value="{{q.id}}" id="q{{forloop.counter}}">
+                <label for="q{{forloop.counter}}">{{q.choices}}</label>
+                <br>
+                {% endfor %}
+                <button type="submit" class="btn btn-sm btn-success">Confirm</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

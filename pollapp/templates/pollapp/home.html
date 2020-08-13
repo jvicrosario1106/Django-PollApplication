@@ -1,0 +1,18 @@
+{% extends 'pollapp/base.html' %}
+
+{% block title %}HomePage{% endblock %}
+
+{% block content %}
+
+<div class="container mt-3">
+    {% for q in question %}
+    <div class="card mt-3">
+        <div class="card-body">
+            <h1>{{q.name}}</h1>
+            <a href="{% url 'votes' q.id %}" class="btn btn-sm btn-info">Vote now</a>
+            <a href="{% url 'results' q.id %}" class="btn btn-sm btn-warning">Results</a>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
