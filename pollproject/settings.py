@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
 # SECRET_KEY = '&_i4dneg&98#k_l2lg_2tw6q_2o@y0-)=$_woe8izog_s4sk24'
 
 SECRET_KEY = os.environ.get("POLL_SECRET_KEY")
-print(SECRET_KEY)
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
